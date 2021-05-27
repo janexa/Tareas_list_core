@@ -1,0 +1,38 @@
+﻿<Properties StartupConfiguration="{5D37233F-2051-4DCD-8D27-9C4D87DFF63C}|Default">
+  <MonoDevelop.Ide.ItemProperties.TareasTest PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TareasTest/Controllers/HomeController.cs">
+    <Files>
+      <File FileName="TareasTest/Controllers/HomeController.cs" Line="235" Column="38" />
+      <File FileName="TareasTest/Views/Home/TareasAll.cshtml" Line="83" Column="32" />
+      <File FileName="TareasTest/Views/Home/EliminarTarea.cshtml" Line="23" Column="84" />
+      <File FileName="TareasTest/Views/Home/CrearTarea.cshtml" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TareasTest" expanded="True">
+            <Node name="TareasTest" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="HomeController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

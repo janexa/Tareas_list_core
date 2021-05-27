@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    @Html.Raw("<h2 class=display-4 text-left>Nueva Tarea</h2>")
+}
+
+
+@model Tareas
+@addTagHelper "*, Microsoft.AspNet.Mvc.TagHelpers"
+
+<div class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well well-sm">
+                    <form asp-action="CrearTarea" asp-controller="Home" class="form-horizontal" method="post" style="margin:0 auto" novalidate>
+                        <fieldset>
+                            <legend class="text-left header"></legend>
+
+                            <div class="form-group">
+
+                                <div class="col-md-4 text-center">
+                                    <input asp-for="ID" class="form-control" placeholder="Id">
+                                    <span asp-validation-for="ID" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-4 text-left">
+                                    <input asp-for="Titulo" class="form-control" placeholder="Titulo">
+                                    <span asp-validation-for="Titulo" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-4 text-left">
+                                    <input asp-for="Descripcion" class="form-control" placeholder="Descripcion">
+                                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-4 text-left">
+                                    <input asp-for="Encargado" class="form-control" placeholder="Encargado">
+                                    <span asp-validation-for="Encargado" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12 text-left">
+                                    <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

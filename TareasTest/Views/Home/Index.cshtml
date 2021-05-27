@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    @Html.Raw("<h1 class=display-4 text-left>Tareas TI</h1>")
+}
+
+
+@model Usuario
+@addTagHelper "*, Microsoft.AspNet.Mvc.TagHelpers"
+
+<div class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well well-sm">
+                    <form asp-action="Index" asp-controller="Home" class="form-horizontal" method="post" style="margin:0 auto" novalidate>
+                        <fieldset>
+                            <legend class="text-left header">Login</legend>
+
+                            <div class="form-group">
+
+                                <div class="col-md-4 text-center">
+
+                                    <input asp-for="Correo" class="form-control" placeholder="Correo">
+                                    <span asp-validation-for="Correo" class="text-danger"></span>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="col-md-4 text-center">
+                                    <input asp-for="Contraseña" class="form-control" placeholder="Contraseña" type="password">
+                                    <span asp-validation-for="Contraseña" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12 text-left">
+                                    <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

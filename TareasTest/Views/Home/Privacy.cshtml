@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Notas";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create">Nueva tarea</a>
+</p>
+<form asp-action="NuevaTarea" asp-controller="Home" class="form-horizontal" method="post" style="margin:0 auto" novalidate>
+    <button type="submit" class="btn btn-outline-primary">Crear</button>
+</form>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Encargado</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">@ViewData["ID"]</th>
+                    <td>@ViewBag.Titulo</td>
+                    <td>@TempData["Descripcion"]</td>
+                    <td>@ViewData["Encargado"]</td>
+                    <td>
+
+
+                        <button type="button" class="btn btn-outline-success">Editar</button>
+                        <button type="button" class="btn btn-outline-danger">Eliminar</button>
+
+                    
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<ul>
+    @foreach (string TareasPendientes in (List<string>)ViewData["TareasPendientes"])
+    {
+        <li>@TareasPendientes</li>
+    }
+</ul>
+
+<ul>
+    @foreach (string TareasPendientes in ViewBag.TareasPendientes)
+    {
+        <li>@TareasPendientes</li>
+    }
+</ul>
+
+<ul>
+    @foreach (string TareasPendientes in (List<string>)TempData["TareasPendientes"])
+    {
+        <li>@TareasPendientes</li>
+    }
+</ul>

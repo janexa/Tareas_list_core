@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    @Html.Raw("<h2 class=display-4 text-left>Editar Tarea</h2>")
+}
+
+
+
+@model TareasTest.Models.Tareas
+
+
+@addTagHelper "*, Microsoft.AspNet.Mvc.TagHelpers"
+
+@using (Html.BeginForm())
+{ 
+
+    <div class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well well-sm">
+                        <form asp-action="EditarTarea" asp-controller="Home" class="form-horizontal" method="post" style="margin:0 auto" novalidate>
+                            <fieldset>
+                                <legend class="text-left header"></legend>
+
+                                <div class="form-group">
+
+                                    <div class="col-md-4 text-left">ID
+                                        <input class="form-control" asp-for="ID">
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-4 text-left">Titulo
+                                        <input class="form-control" asp-for="Titulo">
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-4 text-left">Descripcion
+                                        <input asp-for="Descripcion" class="form-control" placeholder="Descripcion">
+                                </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-4 text-left">Encargado
+                                            <input asp-for="Encargado" class="form-control" placeholder="Encargado">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-12 text-left">
+                                            <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+                                        </div>
+                                    </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

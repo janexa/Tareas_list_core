@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "Tareas";
+}
+
+@model IEnumerable<TareasTest.Models.Tareas>
+
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create">Nueva Tarea</a>
+</p>
+
+
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(model => model.ID)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Titulo)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Descripcion)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.Encargado)</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@Html.DisplayFor(model => item.ID)</th>
+                    <td>@Html.DisplayFor(model => item.Titulo)</td>
+                    <td>@Html.DisplayFor(model => item.Descripcion)</td>
+                    <td>@Html.DisplayFor(model => item.Encargado)</td>
+                    <td>
+                        @*<a asp-action="Editar" asp-route-id="@item.ID">Editar</a>|*@
+                        @Html.ActionLink("EditarTarea", "EditarTarea", new { id = item.ID })|
+                        @*@Html.ActionLink("EliminarTarea", "EliminarTarea", new { id = item.ID })|*@
+                        <a id="deleteCustomerModal"
+                           data-toggle="modal"
+                           data-target="#modal-delete"
+                           data-id="@item.ID"
+                           class="text-danger">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+
+<form asp-action="Delete" asp-controller="Home" role="form" id="myForm">
+    <div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="modalDeleteLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalDeleteLabel">Eliminar Tareas</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="form-horizontal">
+                    &nbsp; ¿Está seguro que desea eliminar la Tarea?
+                    <input hidden name="id" />
+                   
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger" id="modalDeleteButton">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    $(function () {
+        $('#modal-delete').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); 
+            var id = button.data("id");
+            var modal = $(this);
+            modal.find('.modal-content input').val(id);
+        });
+        $("#modalDeleteButton").click(function () {
+            $("#myForm").submit();
+
+        });
+    });
+</script>

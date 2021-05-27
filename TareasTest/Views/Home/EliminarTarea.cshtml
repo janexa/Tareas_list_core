@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    @Html.Raw("<h2 class=display-4 text-left>Eliminar Tarea</h2>")
+}
+@model TareasTest.Models.Tareas
+
+@addTagHelper "*, Microsoft.AspNet.Mvc.TagHelpers"
+
+@using (Html.BeginForm())
+{ 
+
+    <div class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="well well-sm">
+
+                        <form asp-action="EliminarTarea" asp-controller="Home" class="form-horizontal"  style="margin:0 auto" novalidate>
+                                          
+                            <div class="form-horizontal">
+                                &nbsp; ¿Está seguro que desea eliminar la Tarea?
+                                <input hidden name="id" />
+                                <input class="form-control" name="id" asp-for="ID">
+                                <input class="form-control" asp-for="Titulo">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                            
+                            </div>
+                                   
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
